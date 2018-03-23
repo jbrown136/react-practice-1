@@ -108,11 +108,18 @@ class TodoAdder extends React.Component {
   }
 
   render () {
-    return <input 
+    return (
+      <div>
+    <input 
     type="text" 
     onKeyUp={this.handleKeyUp} 
     onChange={this.handleChange} 
-    value={this.state.newTodo}/>
+    value={this.state.newTodo}
+    placeholder="new Item"
+    />
+    <button onClick={this.handleClick}>Add Item</button>
+    </div>
+    )
   }
   handleChange = event => {
     this.setState({
@@ -120,9 +127,19 @@ class TodoAdder extends React.Component {
     })
   }
   handleKeyUp = event => {
-        if (event.key === "Enter")
+        if (event.key === "Enter"){
         this.props.addTodo(event.target.value)
+        this.setState({
+          newTodo: ''
+        });  
       }
+      }
+  handleClick = event => {
+    this.props.addTodo(this.state.newTodo);
+    this.setState({
+      newTodo: ''
+    });
+  }
 }
 
 // function TodoAdder ({addTodo}) {
