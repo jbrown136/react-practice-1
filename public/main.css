@@ -1,0 +1,8 @@
+.list:hover {
+    color: chartreuse;
+}
+
+.complete {
+    color: red;
+    text-decoration: line-through
+}
