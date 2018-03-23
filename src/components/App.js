@@ -136,3 +136,4 @@ class TodoAdder extends React.Component {
 
 export default App;
 
+//button    this.props.addTodo(this.state.newTodo)
